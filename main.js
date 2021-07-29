@@ -9,18 +9,20 @@ $(()=> {
             const allCountries = await getAllDetailsAsync(`https://restcountries.eu/rest/v2/all`);
             displayAllDetails(allCountries);
         } 
-        catch (err) {//להציג הודעת שגיאה או הודעה בנויה
+        catch (err) {
             alert(err);
         }
     });
-   
-    function getAllDetailsAsync(url) {  // get details from any ajax
+
+   // get details from any ajax
+    function getAllDetailsAsync(url) {  
         return $.ajax({
             url: url
         });
     }
-  
-    function displayAllDetails(allCountries) {  // display details
+    
+   // display details
+    function displayAllDetails(allCountries) { 
         for(const item of allCountries) {
             $("#diaplayDetails").append(`
                 <tr>
